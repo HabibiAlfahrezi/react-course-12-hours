@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+	const [friend, setFriend] = useState(["Royan", "Sarman", "Sobri"]);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+	const addFriend = () => setFriend((dataTeman) => [...dataTeman, "Arif"]);
+	const removeFriend = () =>
+		setFriend(friend.filter((dataTeman) => dataTeman !== "Sobri"));
+	const updateOneFriend = () => {
+		setFriend(
+			friend.map((dataFriend) =>
+				dataFriend === "Royan" ? "Royan Ganteng" : dataFriend
+			)
+		);
+	};
+	return (
+		<>
+			<ul>
+				{friend.map((dataSekarang) => {
+					return <li key={Math.random()}>{dataSekarang}</li>;
+				})}
+			</ul>
 
-export default App
+			<button onClick={addFriend}>Add Friend</button>
+			<button onClick={removeFriend}>Remove Friend</button>
+			<button onClick={updateOneFriend}>Update One Friend</button>
+		</>
+	);
+};
+
+export default App;
