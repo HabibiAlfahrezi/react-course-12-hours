@@ -1,4 +1,3 @@
-import React from "react";
 
 const Weather = ({ suhu }) => {
 	if (suhu <= 15) {

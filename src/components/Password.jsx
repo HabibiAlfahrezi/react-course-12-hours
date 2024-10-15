@@ -1,4 +1,3 @@
-import React from "react";
 
 const Password = ({ isValid }) => {
     const ValidPassword = <h1>Valid Password</h1>;

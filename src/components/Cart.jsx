@@ -1,4 +1,3 @@
-import React from "react";
 
 const Cart = ({ items }) => {
 	console.log(items.length);

@@ -1,31 +1,14 @@
-import React, { useState } from "react";
+import UpdateUser from "./components/Context/UpdateUser"
+import { UserProvider } from "./components/Context/UserContext"
+import UserProfile from "./components/Context/UserProfile"
 
 const App = () => {
-	const [friend, setFriend] = useState(["Royan", "Sarman", "Sobri"]);
+  return (
+	<UserProvider>
+		<UserProfile/>
+		<UpdateUser/>
+	</UserProvider>
+  )
+}
 
-	const addFriend = () => setFriend((dataTeman) => [...dataTeman, "Arif"]);
-	const removeFriend = () =>
-		setFriend(friend.filter((dataTeman) => dataTeman !== "Sobri"));
-	const updateOneFriend = () => {
-		setFriend(
-			friend.map((dataFriend) =>
-				dataFriend === "Royan" ? "Royan Ganteng" : dataFriend
-			)
-		);
-	};
-	return (
-		<>
-			<ul>
-				{friend.map((dataSekarang) => {
-					return <li key={Math.random()}>{dataSekarang}</li>;
-				})}
-			</ul>
-
-			<button onClick={addFriend}>Add Friend</button>
-			<button onClick={removeFriend}>Remove Friend</button>
-			<button onClick={updateOneFriend}>Update One Friend</button>
-		</>
-	);
-};
-
-export default App;
+export default App
