@@ -1,14 +1,11 @@
-import UpdateUser from "./components/Context/UpdateUser"
-import { UserProvider } from "./components/Context/UserContext"
-import UserProfile from "./components/Context/UserProfile"
+import Testimonial from "./components/Project/Testimonial/testimonial";
 
 const App = () => {
-  return (
-	<UserProvider>
-		<UserProfile/>
-		<UpdateUser/>
-	</UserProvider>
-  )
-}
+	return (
+		<div>
+			<Testimonial/>
+		</div>
+	);
+};
 
-export default App
+export default App;
