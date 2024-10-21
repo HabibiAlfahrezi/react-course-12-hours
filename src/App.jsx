@@ -1,11 +1,12 @@
-import Testimonial from "./components/Project/Testimonial/testimonial";
+import AdvanceFiltering from "./components/Project/Filtering/AdvanceFiltering"
+
 
 const App = () => {
-	return (
-		<div>
-			<Testimonial/>
-		</div>
-	);
-};
+  return (
+	<>
+		<AdvanceFiltering/>
+	</>
+  )
+}
 
-export default App;
+export default App

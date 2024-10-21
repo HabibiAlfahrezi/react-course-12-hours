@@ -1,4 +1,4 @@
-const accordionData = [
+export const accordionData = [
 	{
 		title: "What is your return policy?",
 		content:
@@ -26,4 +26,4 @@ const accordionData = [
 	},
 ];
 
-export default accordionData;
+
